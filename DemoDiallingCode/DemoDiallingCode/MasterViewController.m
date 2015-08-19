@@ -32,24 +32,7 @@
     
     self.tableView.sectionIndexBackgroundColor = [UIColor clearColor];
     
-    NSArray *countryArray  = [NSLocale ISOCountryCodes];
-    NSArray *languageArray = @[@"zh_CN",@"en_US",@"ja_JP"];
-    
-    for ( NSString *languege in languageArray)
-    {
-        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:languege];
-        
-        for ( int i = 0 ; i < 5 ; ++i )
-        {
-            NSString *countryCode = countryArray[i];
-            
-            NSString *displayName = [locale displayNameForKey:NSLocaleCountryCode value:countryCode];
-            
-            NSLog(@"%@\t%@\t%@\t|\t%@",languege,countryCode,displayName,[self latinize:displayName]);
-        }
-    }
-    
-//    [self readData];
+    [self readData];
 }
 
 - (void)readData {
